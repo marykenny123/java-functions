@@ -1,7 +1,7 @@
 public class DocComments {
 
     //Para documentar un método se toman en cuenta, el nombre de la función, los parámetros con su tipo de dato, lo que devuelve con su tipo de dato y lo que hace la función. Mira estos ejemplos y resuelve el ejercicio final. 
-    
+
     //Si escribes primero la función y luego sobre ella escribes /** */ te saldrá automáticamente la plantilla de documentación.
 
 
@@ -18,10 +18,10 @@ public class DocComments {
 
     /**
      * Function name: greeting
-     * 
+     *
      * Inside the function:
      * 1. prints "Hola FemCoder"
-     * 
+     *
      */
     public static void greeting(){
         System.out.println("Hola FemCoder");
@@ -29,11 +29,11 @@ public class DocComments {
 
     /**
      * Function name: greetingCoder
-     * 
+     *
      * @param name (String)
      * @param height (double)
      * @param weight (double)
-     * 
+     *
      * Inside the function:
      * 1. print the name the height and the weight as part of a text
      */
@@ -44,11 +44,11 @@ public class DocComments {
 
     /**
      * Function name: calculateBodyMassIndex
-     * 
+     *
      * @param height (double)
      * @param weight (double)
      * @return (double)
-     * 
+     *
      * Inside the function:
      * 1. calculates the weight in kilograms by the squared height in meters and return it.
      */
@@ -93,3 +93,5 @@ public class DocComments {
 
 
 }
+
+
