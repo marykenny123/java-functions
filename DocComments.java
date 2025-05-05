@@ -3,14 +3,17 @@ public class DocComments {
     //Para documentar un método se toman en cuenta, el nombre de la función, los parámetros con su tipo de dato, lo que devuelve con su tipo de dato y lo que hace la función. Mira estos ejemplos y resuelve el ejercicio final. 
     
     //Si escribes primero la función y luego sobre ella escribes /** */ te saldrá automáticamente la plantilla de documentación.
-    
+
+
     public static void main(String[] args) {
         greeting();
         greetingCoder("Alex", 155, 44.50);
         double bmi = calculateBodyMassIndex(1.55, 44.50);
         System.out.println(bmi);
 
-        //Ejecuta el nuevo método 
+        //Ejecuta el nuevo método
+        bmiInfo(bmi);
+
     }
 
     /**
@@ -56,17 +59,37 @@ public class DocComments {
     }
 
     //Escribe una función que con el índice de masa corporal devuelva un String con los resultados y documéntala:
-    
+
+    public static void bmiInfo(double bmi) {
+        if (bmi < 16) {
+            System.out.println("Delgadez severa\t< 16");
+        } else if (bmi < 17) {
+            System.out.println("Delgadez moderada\t16 - 17");
+        } else if (bmi < 18.5) {
+            System.out.println("Delgadez leve\t17 - 18.5");
+        } else if (bmi < 25) {
+            System.out.println("Normal\t18.5 - 25");
+        } else if (bmi < 30) {
+            System.out.println("Sobrepeso\t25 - 30");
+        } else if (bmi < 35) {
+            System.out.println("Sobrepeso\t25 - 30");
+        } else if (bmi < 40) {
+            System.out.println("Obeso Clase III\t> 40 */");
+        } else {
+            System.out.println("Obeso Clase III\t> 40 */");
+        }
+    }
+
+
     /* Clasificación índice de masa corportal rango - kg/m2
     Delgadez severa	< 16
     Delgadez moderada	16 - 17
     Delgadez leve	17 - 18.5
-    Normal	18.5 - 25
+    Normal  18.5 - 25
     Sobrepeso	25 - 30
     Obeso Clase I	30 - 35
     Obeso Clase II	35 - 40
-    Obeso Clase III	> 40 */
-
+    Obeso Clase III > 40 */
 
 
 }
