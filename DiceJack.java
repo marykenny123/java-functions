@@ -127,7 +127,7 @@ public class DiceJack {
      */
 
     public static boolean userWon (int sumNumbers, int sumDiceRolls) {
-        if ((sumNumbers >= sumDiceRolls) && (((sumNumbers - sumDiceRolls)) <= 5)) {
+        if ((sumNumbers >= sumDiceRolls) && (((sumNumbers - sumDiceRolls)) < 5)) {
             return true;
         }
         else {
