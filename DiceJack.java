@@ -4,7 +4,6 @@ import java.util.Scanner;
 public class DiceJack {
     public static void main(String[] args) {
 
-
         /* 
         Reglas del juego:
         - El usuario debe escoger 3 números entre 1 y 6 (incluidos).
@@ -35,35 +34,41 @@ public class DiceJack {
         */
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("You should choose numbers between 1 and 6.");
-        System.out.print("Pls enter 1st number and press enter:\t");
-        byte num1 = scanner.nextByte();
 
-        System.out.print("Pls enter 2nd number and press enter:\t");
-        byte num2 = scanner.nextByte();
-
-        //System.exit(-1);
-
-        System.out.print("Pls enter 3rd number and press enter:\t");
-        byte num3 = scanner.nextByte();
+        System.out.println("P fv elige números entre 1 y 6, ambos incluídos.");
+        System.out.print("P fv teclea cada número separado por un espacio y dar a intro:\t");
+        int num1 = scanner.nextInt();
+        int num2 = scanner.nextInt();
+        int num3 = scanner.nextInt();
 
         if (isLessThanOne(num1, num2, num3) == true) {
+            System.out.println("NÚMERO ERRÓNEO");
             System.exit(-1);
         } else if (isHigherThanSix(num1, num2, num3) == true) {
+            System.out.println("NÚMERO ERRÓNEO");
             System.exit(-1);
         }
-
+        int sumNumbers = num1 + num2 + num3;
 
         scanner.nextLine();
-        System.out.println("Do you want to throw the dice? yes or no");
+        System.out.println("¿Quieres jugar a lanzar a los dados? Teclea s para sí o n para no y dar a intro.");
         String reply = scanner.nextLine();
-        if (!(reply.equals("yes"))) {              //|| (reply.equals("no")))) {
+        if (!(reply.equals("s") || (reply.equals("S")))) {              //|| (reply.equals("no")))) {
             System.exit(-1);
         } else {
-            System.out.println(rollDice());
+            int diceNum1 = rollDice();
+            int diceNum2 = rollDice();
+            int diceNum3 = rollDice();
+            System.out.println(diceNum1 + " " + diceNum2 + " " + diceNum3);
+            int sumDice = diceNum1 + diceNum2 + diceNum3;
+            System.out.println("La suma de los números de los dados es:\t" + sumDice);
+            System.out.println("La suma de tus números es:\t" + sumNumbers);
+            if ((userWon(sumNumbers, sumDice) == true)) {
+                System.out.println("¡Enhorabuena, has ganado!");
+            } else {
+                System.out.println("¡Lástima, has perdido!");
+            }
         }
-
-
     }
 
 
@@ -118,10 +123,17 @@ public class DiceJack {
      * @return (boolean)
      *
      * Inside the function:
-     * 1. check if user numbers are greater than computer numbers and the difference between user numbers and computer numbers are less than 5. 
+     * 1. check if user numbers are greater than computer numbers and the difference between user numbers and computer numbers are less than 5.
      */
 
-    // Escribe tu código aquí
+    public static boolean userWon (int sumNumbers, int sumDiceRolls) {
+        if ((sumNumbers >= sumDiceRolls) && (((sumNumbers - sumDiceRolls)) <= 5)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 
 
     /**
@@ -134,11 +146,11 @@ public class DiceJack {
      */
 
     public static int rollDice() {
-        int randomDiceNum = (int) (Math.random()* 1 * 7);
-        System.out.println("random" + randomDiceNum);
-        return randomDiceNum;
-
-
+        int min = 1;
+        int max = 6;
+        int i = 0;
+        int randomNum1 = min + (int)(Math.random() * ((max - min) + 1));
+        return randomNum1 ;
     }
 
 }
