@@ -68,6 +68,7 @@ public class DiceJack {
             } else {
                 System.out.println("¡Lástima, has perdido!");
             }
+            scanner.close();
         }
     }
 
